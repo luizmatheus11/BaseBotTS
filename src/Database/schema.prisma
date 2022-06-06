@@ -7,3 +7,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Guild {
+  id            String @id 
+  @@map("guild")
+}

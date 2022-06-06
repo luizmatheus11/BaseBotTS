@@ -32,7 +32,7 @@ export default class MessageListener extends Event {
     if (cmd.commandSettings.admin) {
 
       if (cmd.commandSettings.admin == true || cmd.commandSettings.roles[0]) {
-        if (!message.member.permissions.has('ADMINISTRATOR')) return
+        if (!message.member.permissions.has('ADMINISTRATOR') && !cmd.commandSettings.roles.some(x => message.member.roles.cache.has(x))) return
       }
       cmd.run(this.client, args, message)
       this.client.cooldown.set(message.author.id, cmd.commandSettings.cooldown)

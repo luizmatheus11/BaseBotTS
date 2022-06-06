@@ -1,4 +1,3 @@
-
 import { ClientEvents } from 'discord.js';
 import { BotClient } from '../BotClient';
 

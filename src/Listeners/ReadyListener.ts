@@ -11,5 +11,6 @@ export default class ReadyListener extends Event {
 
     async run() {
         console.log(`Logando o ${this.client.user.tag}`)
+        this.client.registryCommands()
     }
 }

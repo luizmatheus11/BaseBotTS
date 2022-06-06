@@ -16,10 +16,13 @@ export default class CommandLoader {
                         const CommandFile = require(`../Commands/${category}/${e}`)
                         const Command = CommandFile.default
                         delete require.cache[require.resolve(`../Commands/${category}/${e}`)]
-
                         const command: Command = new Command(client)
 
                         client.commands.set(command.commandSettings.name, command)
+
+                        if (command.commandSettings.canSlash == true) {
+                            client.commandsArray.push(command.commandSettings)
+                        }
 
                         command.commandSettings.aliases.forEach(aliases => client.aliases.set(aliases, command.commandSettings.name))
 
