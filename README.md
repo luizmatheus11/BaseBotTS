@@ -8,7 +8,6 @@ Frameworks:
  Typescript,
  discord.js
 
- Quaisquer dicas ou ajustes entrar em contato: chr#0001
 
  
 
